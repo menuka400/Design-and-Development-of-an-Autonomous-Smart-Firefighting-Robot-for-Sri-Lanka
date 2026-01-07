@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autonomous Smart Firefighting Robot - An innovative solution for fire safety in Sri Lanka">
+    <title>Autonomous Smart Firefighting Robot | Sri Lanka</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), #34495e);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #000000 !important;
+            background-color: #000000 !important;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #CCCCCC;
+            animation: fadeInUp 1s ease 0.3s both;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            max-width: 600px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Overview Section */
+        .overview-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .stat-label strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Research & Design Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .research-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .research-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .research-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Features Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-date {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            padding: 2rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Technical Details */
+        .technical-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .tech-diagram {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .tech-diagram img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .tech-diagram img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Modal/Lightbox Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-caption {
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translateY(-50%) scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tech-specs {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .tech-specs h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .spec-value {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--secondary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-date {
+                left: 20px;
+                transform: translateX(0);
+            }
+
+            .contact-container,
+            .technical-content {
+                grid-template-columns: 1fr;
+            }
+
+            .technical-content {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .research-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">🔥 FireBot LK</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#technical">Technical</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Autonomous Smart Firefighting Robot</h1>
+            <p class="tagline">Protecting Lives & Property with Intelligent Automation</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-subtitle">Revolutionizing fire safety for Sri Lanka through cutting-edge robotics and AI</p>
+            <div class="overview-content">
+                <p>
+                    The Autonomous Smart Firefighting Robot is a self-designed and self-learned solution specially suited for Sri Lankan environments, where human access during fires can be dangerous or limited. This intelligent system covers electronics, electrical systems, embedded programming, and robotics to create a comprehensive firefighting solution.
+                </p>
+                <p>
+                    The robot is divided into two main functional parts working together through ESP32-to-ESP32 wireless communication: a Smart Mobile Firefighting Vehicle for navigation and movement, and a Fire Suppression and Water Management System for extinguishing fires. The project aims to reduce risk to human firefighters, respond quickly to fire incidents, and provide a low-cost, intelligent, autonomous firefighting solution adapted for real-world use in Sri Lanka.
+                </p>
+            </div>
+            <div class="overview-stats">
+                <div class="stat-card fade-in visible" style="border-left: 4px solid #e74c3c;">
+                   <div class="stat-label"><strong style="color: #e74c3c;">🔥 Autonomous Fire Response</strong></div>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">AI-assisted detection and suppression</p>
+                </div>
+                <div class="stat-card fade-in visible" style="border-left: 4px solid #3498db;">
+                    <div class="stat-label"><strong style="color: #3498db;">⚡ Dual ESP32 Distributed System</strong></div>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">Independent mobility & firefighting control</p>
+                </div>
+                <div class="stat-card fade-in visible" style="border-left: 4px solid #f39c12;">
+                    <div class="stat-label"><strong style="color: #f39c12;">🎯 Two-Axis Precision Nozzle Control</strong></div>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">Targeted fire suppression</p>
+                </div>
+                <div class="stat-card fade-in visible" style="border-left: 4px solid #27ae60;">
+                    <div class="stat-label"><strong style="color: #27ae60;">🛡️ Designed for Hazardous Environments</strong></div>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">Reduces human firefighter risk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Design Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research & Design</h2>
+            <p class="section-subtitle">Key components, technologies, and challenges overcome</p>
+            <div class="research-grid">
+                <div class="research-card fade-in">
+                    <h3>🔧 Part 1: Mobile Vehicle</h3>
+                    <ul>
+                        <li>Smart robotic car chassis</li>
+                        <li>4 DC motors for movement</li>
+                        <li>2 motor driver modules</li>
+                        <li>ESP32 microcontroller</li>
+                        <li>Terrain navigation capabilities</li>
+                        <li>Safe distance fire zone access</li>
+                    </ul>
+                </div>
+                <div class="research-card fade-in">
+                    <h3>� Part 2: Fire Suppression</h3>
+                    <ul>
+                        <li>Water pump & water gun (nozzle)</li>
+                        <li>5-liter water tank</li>
+                        <li>Water level sensor</li>
+                        <li>Smart valve control</li>
+                        <li>ESP32 microcontroller</li>
+                        <li>Dual-channel relay module</li>
+                        <li>Buck converters (8A & 3A)</li>
+                        <li>High-RPM CPU cooling fan</li>
+                    </ul>
+                </div>
+                <div class="research-card fade-in">
+                    <h3>💻 Software & Intelligence</h3>
+                    <ul>
+                        <li>ESP32-to-ESP32 communication</li>
+                        <li>Embedded C/C++ programming</li>
+                        <li>AI assistant with voice detection</li>
+                        <li>Speech-to-Text (STT) integration</li>
+                        <li>Text-to-Speech (TTS) capabilities</li>
+                        <li>Computer vision for fire detection</li>
+                        <li>LangChain & LangGraph (planned)</li>
+                    </ul>
+                </div>
+                <div class="research-card fade-in">
+                    <h3>🎯 Key Features</h3>
+                    <ul>
+                        <li>Wireless ESP32-to-ESP32 coordination</li>
+                        <li>Real-time water level monitoring</li>
+                        <li>X-Y axis servo nozzle control</li>
+                        <li>Continuous cooling system</li>
+                        <li>Self-designed and self-learned</li>
+                        <li>Low-cost solution for Sri Lanka</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features & Updates Timeline -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Features & Updates</h2>
+            <p class="section-subtitle">Track our progress and latest developments</p>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>🚀 Phase 1: Two-Part System Design</h3>
+                        <p>Built the foundational system with Part 1 (Smart Mobile Firefighting Vehicle with chassis, 4 DC motors, and ESP32) and Part 2 (Fire Suppression System with water pump, 5L tank, sensors, and cooling). Established ESP32-to-ESP32 wireless communication between both systems.</p>
+                    </div>
+                    <div class="timeline-date">✓ Completed</div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>🎯 Phase 2: X-Y Axis Servo Mechanism</h3>
+                        <p>Successfully completed the X-Y axis servo motor integration for precise water nozzle control. This allows accurate rotation and aiming of the water gun, enabling targeted fire suppression from multiple angles.</p>
+                    </div>
+                    <div class="timeline-date">✓ Completed</div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>🧠 Phase 3: AI Assistant Development</h3>
+                        <p>Currently developing an intelligent AI assistant with voice detection, Speech-to-Text (STT), and Text-to-Speech (TTS) capabilities. The AI assistant can access all sensor data, provide real-time information to users for firefighting decisions, and has full system control and monitoring capabilities. It enables voice-controlled operations, intelligent status feedback, and acts as a comprehensive command interface for the entire firefighting system.</p>
+                    </div>
+                    <div class="timeline-date">⚡ In Progress</div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>🔮 Phase 4: Camera & Visual Fire Detection</h3>
+                        <p>Next phase will integrate a camera module to visually identify fire instead of manual control. Computer vision algorithms will enable the robot to detect flames and heat signatures autonomously.</p>
+                    </div>
+                    <div class="timeline-date">❌ Not Started</div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>🤖 Phase 5: Autonomous AI Fire Suppression</h3>
+                        <p>Final phase will implement agentic AI with LangChain (memory) and LangGraph (decision-making). The system will automatically detect fire location, rotate servos toward the fire, and spray water precisely without human intervention.</p>
+                    </div>
+                    <div class="timeline-date">❌ Not Started</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery & Media</h2>
+            <p class="section-subtitle">Visual documentation of our development journey</p>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <a href="https://drive.google.com/file/d/1N5igEDfbHrbTRQis0pe9YRBp9GkuAW1N/view?usp=sharing" target="_blank">
+                        <img src="image.png" alt="First Demo Video">
+                    </a>
+                    <div class="gallery-caption">
+                        <strong>First Demo Test</strong>
+                        <p>Initial prototype demonstration and testing</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <a href="https://drive.google.com/file/d/1f6376yFo0lWK9pOpul1VUzgIGuqh3kbD/view?usp=sharing" target="_blank">
+                        <img src="Image20260102123224.jpg" alt="Project Upgrade">
+                    </a>
+                    <div class="gallery-caption">
+                        <strong>Project Upgrade</strong>
+                        <p>Latest system improvements and enhancements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section id="technical">
+        <div class="container">
+            <h2 class="section-title">Technical Details</h2>
+            <p class="section-subtitle">In-depth specifications and architecture</p>
+            <div class="technical-content">
+                <div class="tech-diagram fade-in">
+                    <h3>System Architecture</h3>
+                    <img src="System Architecture Diagram.png" alt="System Architecture Diagram" id="architectureDiagram" onclick="openModal()">
+                    <p style="margin-top: 0.5rem; color: #3498db; font-size: 0.9rem; text-align: center;">
+                        💡 Click on the diagram to view larger version
+                    </p>
+                    <p style="margin-top: 1rem; color: #666;">
+                        The robot employs a distributed dual-ESP32 architecture where Part 1 (Mobile Vehicle) handles movement and navigation, while Part 2 (Fire Suppression System) manages water pumping, spraying, and monitoring. Both ESP32 controllers communicate wirelessly to enable synchronized firefighting actions with improved reliability and response time.
+                    </p>
+                    <p style="margin-top: 0.5rem; color: #999; font-style: italic; font-size: 0.9rem;">
+                        * This diagram will be updated in future versions
+                    </p>
+                </div>
+                <div class="tech-specs fade-in">
+                    <h3>Technical Specifications</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">Main Controller</span>
+                        <span class="spec-value">Dual ESP32 System</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Drive System</span>
+                        <span class="spec-value">4 DC Motors</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Motor Control</span>
+                        <span class="spec-value">2 Driver Modules</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Water Capacity</span>
+                        <span class="spec-value">5 Liters</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Nozzle Control</span>
+                        <span class="spec-value">X-Y Axis Servos</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Power Regulation</span>
+                        <span class="spec-value">8A & 3A Buck Converters</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Relay System</span>
+                        <span class="spec-value">Dual-Channel Module</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Cooling System</span>
+                        <span class="spec-value">High-RPM CPU Fan</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Water Monitoring</span>
+                        <span class="spec-value">Real-time Level Sensor</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Communication</span>
+                        <span class="spec-value">ESP32-to-ESP32 Wireless</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Collaboration</h2>
+            <p class="section-subtitle">Let's work together to make Sri Lanka safer</p>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Get in Touch</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">
+                        Interested in collaboration, investment opportunities, or deploying our firefighting robot? We'd love to hear from you!
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            menuka400@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            0719576961
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Colombo, Sri Lanka
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Connect With Me</h3>
+                    <div class="social-links" style="justify-content: center;">
+                        <a href="https://www.linkedin.com/in/m-h-jayasuriya" target="_blank" class="social-link" title="LinkedIn" style="width: 50px; height: 50px; padding: 0; background: transparent;">
+                            <img src="linkedin.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Autonomous Smart Firefighting Robot Project. All rights reserved.</p>
+            <p>Designed and developed for the safety of Sri Lanka | <a href="#contact">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <!-- Modal for Image Zoom -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="System Architecture Diagram">
+            <div class="modal-caption">System Architecture Diagram - Click outside to close</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add active class to current navigation item on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Modal functionality for diagram zoom
+        function openModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = document.getElementById('architectureDiagram');
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
